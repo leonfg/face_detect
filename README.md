@@ -5,6 +5,7 @@ Cascade classifier based face detection modified from http://www.adapteva.com/wh
 1. OpenCV install:
 sudo apt-get install libopencv-dev
 
+
 2. Build: 
 cd code
 ./buils.sh
