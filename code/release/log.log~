@@ -1,0 +1,27 @@
+WAITING FOR CORES TO FINISH...unused: 0, start_cores: 1, task_finished: 0, tasks.count: 63
+ CORES FINISHED IN 1.121552 SECONDS.
+Downloading results... Results downloaded: 6048 bytes.
+Downloading timers... Timers downloaded: 8 bytes.
+Done in 1.41734 sec.
+Detecting objects via cv::detect_multi_scale...
+Done in 0.282264 sec.
+Saving result to t1.jpg... Done.
+
+
+emosue2：
+WAITING FOR CORES TO FINISH...unused: 0, start_cores: 4, task_finished: 0, tasks.count: 206
+ CORES FINISHED IN 0.848874 SECONDS.
+Downloading results... Results downloaded: 19776 bytes.
+Downloading timers... Timers downloaded: 32 bytes.
+Done in 1.18844 sec.
+Detecting objects via cv::detect_multi_scale...
+Done in 1.07942 sec.
+Saving result to t1.jpg... Done.
+
+WAITING FOR CORES TO FINISH...unused: 0, start_cores: 8, task_finished: 0, tasks.count: 206
+ CORES FINISHED IN 0.417092 SECONDS.
+Downloading results... Results downloaded: 19776 bytes.
+Downloading timers... Timers downloaded: 64 bytes.
+Done in 0.768585 sec.
+Detecting objects via cv::detect_multi_scale...
+Done in 1.09208 sec.
