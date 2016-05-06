@@ -1,8 +1,13 @@
 Face Detect
 ===================================
 Cascade classifier based face detection modified from http://www.adapteva.com/white-papers/face-detection-using-the-epiphany-multicore-processor to fit the parallella board and current eSDK.    
-    
-Build and run on Parallella
+
+Envirment
+-----------------------------------
+Image: ubuntu-14.04-headless-z7020-20150130.1    
+eSDK: 2015.1    
+
+Build and run
 -----------------------------------
 ### OpenCV install:
 sudo apt-get install libopencv-dev    
