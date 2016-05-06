@@ -1585,7 +1585,7 @@ EpErrorCode ep_detect_multi_scale_device (
 
 	printf("load srec! ROWS=%d, COLS=%d\n", ROWS, COLS);
 
-	if (e_load_group("epiphany.srec", &e->edev, 0, 0, ROWS, COLS, E_FALSE) == E_ERR)
+	if (e_load_group("epiphany.elf", &e->edev, 0, 0, ROWS, COLS, E_FALSE) == E_ERR)
 	//if (e_load("epiphany.srec", &e->edev, 0, 0, E_TRUE) == E_ERR)
 	{
 		perror("e_load failed");

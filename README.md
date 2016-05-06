@@ -4,8 +4,8 @@ Cascade classifier based face detection modified from http://www.adapteva.com/wh
 
 Envirment
 -----------------------------------
-Image: ubuntu-14.04-headless-z7020-20150130.1    
-eSDK: 2015.1    
+Image: ubuntu-15.04-esdk-2016.3-headless-z7020    
+eSDK: 2016.3    
 
 Build and run
 -----------------------------------
