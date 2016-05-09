@@ -40,12 +40,8 @@
 #define BANK3 0x6000
 //(EpCoreBank3 *)BANK3
 
-//e_mutex_t mutex;
-
-
-/**
- * @return global pointer to mutex in first core
- */
+/* Global mutex */
+e_mutex_t global_mutex = MUTEX_NULL;
 
 /**
  * Get pointer on begin of Shared memory structure.
@@ -129,13 +125,11 @@ static void dma_transfer (
  * @return unmodified (*val) value
  */
 static int atomic_increment(int volatile *const val, int const max_val) {
-    e_mutex_t *mutex_p = (void *)0x00004000;
-
-    e_mutex_lock(0, 0, mutex_p);
+    e_mutex_lock(0, 0, &global_mutex);
     int const cur_val = *val;
     if(cur_val < max_val)
         *val = cur_val + 1;
-    e_mutex_unlock(0, 0, mutex_p);
+    e_mutex_unlock(0, 0, &global_mutex);
 
     return cur_val;
 }
@@ -147,13 +141,11 @@ static int atomic_increment(int volatile *const val, int const max_val) {
  * @return unmodified (*val) value
  */
 static int atomic_decrement(int volatile * const val, int const min_val) {
-    e_mutex_t *mutex_p = (void *)0x00004000;
-
-    e_mutex_lock(0, 0, mutex_p);
+    e_mutex_lock(0, 0, &global_mutex);
     int const cur_val = *val;
     if(cur_val > min_val)
         *val = cur_val - 1;
-    e_mutex_unlock(0, 0, mutex_p);
+    e_mutex_unlock(0, 0, &global_mutex);
 
     return cur_val;
 }
@@ -166,15 +158,9 @@ int mc_core_common_go()
     unsigned row = 0;
     unsigned col = 0;
     e_coreid_t coreid = 0;
-    e_mutex_t *mutex = NULL;
     // Must be initialized ONLY on one core
-    mutex = (int *)0x00004000;
     coreid = e_get_coreid();
     e_coords_from_coreid(coreid, &row, &col);
-    if ( (0==row) && (0==col) )
-    {
-        e_mutex_init(0, 0, mutex, NULL);
-    }
 #endif
     ((EpCoreBank1 *)BANK1)->timer.core_id = e_get_coreid();
 
