@@ -90,7 +90,7 @@ static void dma_transfer (
     unsigned int         const size,
     int                  const wait
 ) {
-#if 1
+#if 0
     if(wait) {
 
         /*
@@ -113,7 +113,7 @@ static void dma_transfer (
 		e_dma_copy((void *)dst, (void *)src, size);
     }
 #endif
-    //e_dma_copy((void *)dst, (void *)src, size);
+    e_dma_copy((void *)dst, (void *)src, size);
     //memcpy(dst, src, size);
     return;
 }
@@ -154,7 +154,7 @@ static int atomic_decrement(int volatile * const val, int const min_val) {
 
 int mc_core_common_go()
 {
-#if 1
+#if 0
     unsigned row = 0;
     unsigned col = 0;
     e_coreid_t coreid = 0;
@@ -188,4 +188,5 @@ int main(void)
 #endif
 	return status;
 }
+
 
